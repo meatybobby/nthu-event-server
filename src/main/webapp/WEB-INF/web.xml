@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<listener>
+ 		<listener-class>netdb.courses.softwarestudio.finalproject.nthuevent.service.ObjectifyInitailizer</listener-class>
+	</listener>
+	
+	<filter>
+        <filter-name>ObjectifyFilter</filter-name>
+        <filter-class>com.googlecode.objectify.ObjectifyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+        <filter-name>ObjectifyFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<servlet>
+		<servlet-name>event-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.EventController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>event-controller</servlet-name>
+		<url-pattern>/events/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>events-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.EventsDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>events-dao</servlet-name>
+		<url-pattern>/model/business/events-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>events-json-view</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.view.json.EventJsonView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>events-json-view</servlet-name>
+		<url-pattern>/view/json/events-json-view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>user-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.UserController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user-controller</servlet-name>
+		<url-pattern>/users/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>user-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.UserDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user-dao</servlet-name>
+		<url-pattern>/model/business/user-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>user-json-view</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.view.json.UserJsonView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>user-json-view</servlet-name>
+		<url-pattern>/view/json/user-json-view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>session-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.SessionController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>session-controller</servlet-name>
+		<url-pattern>/session/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>session-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.SessionDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>session-dao</servlet-name>
+		<url-pattern>/model/business/session-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>session-json-view</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.view.json.SessionJsonView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>session-json-view</servlet-name>
+		<url-pattern>/view/json/session-json-view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>join-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.JoinEventController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>join-controller</servlet-name>
+		<url-pattern>/users/join-event/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>join-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.JoinEventDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>join-dao</servlet-name>
+		<url-pattern>/model/business/join-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>host-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.HostEventController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>host-controller</servlet-name>
+		<url-pattern>/users/host-event/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>host-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.HostEventDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>host-dao</servlet-name>
+		<url-pattern>/model/business/host-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>comment-controller</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.controller.CommentController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>comment-controller</servlet-name>
+		<url-pattern>/comment/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>comment-dao</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.model.business.CommentDao</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>comment-dao</servlet-name>
+		<url-pattern>/model/business/comment-dao</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>comment-json-view</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.view.json.CommentJsonView</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>comment-json-view</servlet-name>
+		<url-pattern>/view/comment-json-view</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>clear-all</servlet-name>
+		<servlet-class>netdb.courses.softwarestudio.finalproject.nthuevent.service.ClearService</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>clear-all</servlet-name>
+		<url-pattern>/dangerous/all</url-pattern>
+	</servlet-mapping>
+</web-app>
